@@ -91,11 +91,11 @@ function App(){
                 <Header onClickCart={ () => setCartOpened(true)}
                 totalPrice={totalPrice}/>
                 <Routes>
-                    <Route path='/favorites' element={<Favorites
+                    <Route path='favorites' element={<Favorites
                                                     onAddToFavorite={onAddToFavorite}
                                                     onAddToCart={onAddToCart}
                                                     />}/>
-                    <Route path='/' element={<Home items={items}
+                    <Route path="" element={<Home items={items}
                     searchValue={searchValue}
                     onChangeSearchInput={onChangeSearchInput}
                     onAddToFavorite={onAddToFavorite}
