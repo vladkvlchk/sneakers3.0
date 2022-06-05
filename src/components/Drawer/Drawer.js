@@ -7,7 +7,7 @@ function Drawer({ onClose, items = [], onRemove, totalPrice }){
             <div className={styles.rightSide}>
                 <div className={styles.cartHeader}>
                     <h2>Cart</h2>
-                    <img className={styles.delete} src="/media/delete.svg" height={20} width={20} alt="[delete]"
+                    <img className={styles.delete} src="/sneakers3.0/media/delete.svg" height={20} width={20} alt="[delete]"
                         onClick={onClose}/>
                 </div>
 
@@ -18,7 +18,7 @@ function Drawer({ onClose, items = [], onRemove, totalPrice }){
                             <p>{obj.title}</p>
                             <b>{obj.price}$</b>
                         </div>
-                        <img className={styles.delete} src="/media/delete.svg" height={20} width={20} alt="[delete]"
+                        <img className={styles.delete} src="/sneakers3.0//media/delete.svg" height={20} width={20} alt="[delete]"
                             onClick={() => onRemove(obj.id)}/>
                     </div>
                 ))}
