@@ -95,7 +95,7 @@ function App(){
                                                     onAddToFavorite={onAddToFavorite}
                                                     onAddToCart={onAddToCart}
                                                     />}/>
-                    <Route path="" element={<Home items={items}
+                    <Route path="sneakers3.0" element={<Home items={items}
                     searchValue={searchValue}
                     onChangeSearchInput={onChangeSearchInput}
                     onAddToFavorite={onAddToFavorite}
