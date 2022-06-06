@@ -1,15 +1,15 @@
+import styles from './Info.module.scss' 
 
-
-function Info(imageUrl, title, description){
+function Info({imageUrl, title, description}){
     return(
-        <div className="info">
-            <div className="i-image">
-                <img src={imageUrl}></img>
+        <div className={styles.info}>
+            <div className={styles.image}>
+                <img alt="[info-logo]" src={"/media/heart-bow-arrow.svg"}/>
             </div>
-            <div className="i-title">
+            <div className={styles.title}>
                 <h1>{title}</h1>
             </div>
-            <div className="i-description">
+            <div className={styles.description}>
                 <p>{description}</p>
             </div>
         </div>

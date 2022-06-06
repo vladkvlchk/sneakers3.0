@@ -22,7 +22,7 @@ function Card({onFavorite, onPlus, imageUrl, title, price, id, favorited = false
                 <img className={styles.liked} src={isFavorite ? "/sneakers3.0/media/liked.svg" : "/sneakers3.0/media/unliked.svg"} alt="[liked]"
                 onClick={onClickFavorite}/>                       
             </div>
-            <img src={imageUrl} height={112} alt="[photo of sneakers]"/>
+            <img src={imageUrl} height={112} alt="[sneakers]"/>
             <h5>{title}</h5>
             <div className={styles.between}>
                 <div className={styles.cardPriceConteiner}>
@@ -31,6 +31,7 @@ function Card({onFavorite, onPlus, imageUrl, title, price, id, favorited = false
                 </div>
                 <div className={styles.btnAdd}>
                     <img src={isAdded ? '/sneakers3.0/media/checked.svg' : '/sneakers3.0/media/add-plus.svg'} 
+                    alt="[add]"
                     onClick={onClickPlus}/>
                 </div>
             </div>

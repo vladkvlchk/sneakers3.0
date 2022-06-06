@@ -6,7 +6,7 @@ function Header(props){
         <header>
             <Link to="sneakers3.0/">
                 <div className={styles.headerLeft}>
-                    <img src="media/logo.png" height={40}/>
+                    <img src="media/logo.png" height={40} alt="[logo]"/>
                     <div>
                         <h3>sneakers</h3>
                         <p>shop of the best sneakers</p>
