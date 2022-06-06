@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Header(props){
     return (
         <header>
-            <Link to="/">
+            <Link to="sneakers3.0/">
                 <div className={styles.headerLeft}>
                     <img src="media/logo.png" height={40}/>
                     <div>

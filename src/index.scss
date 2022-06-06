@@ -45,3 +45,20 @@ a{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+@media only screen and (max-width: 768px) {
+    header{
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3;
+    }
+    .wrapper{
+        max-width: 680px;
+        margin-top: 150px;
+    }
+}
