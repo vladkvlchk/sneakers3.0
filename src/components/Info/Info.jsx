@@ -4,7 +4,7 @@ function Info({imageUrl, title, description}){
     return(
         <div className={styles.info}>
             <div className={styles.image}>
-                <img alt="[info-logo]" src={"/media/heart-bow-arrow.svg"}/>
+                <img alt="[info-logo]" src={imageUrl}/>
             </div>
             <div className={styles.title}>
                 <h1>{title}</h1>

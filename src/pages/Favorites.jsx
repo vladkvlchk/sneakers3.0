@@ -22,9 +22,9 @@ function Favorites({ onAddToCart, onAddToFavorite}){
                     />))
                     :
                     <Info key={favoriteItems.length + 66} 
-                    imageUrl={"heart-bow-arrow.svg"}
-                    title="no items"
-                    description="add products to your favorites to they appear here"
+                    imageUrl={"sneakers3.0/media/heart-bow-arrow.svg"}
+                    title="You have no Saved Items"
+                    description="Add products to your Favorites to they appear here."
                     />
                 }
             </div>
