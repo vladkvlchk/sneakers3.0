@@ -1,7 +1,11 @@
+import React from 'react'
 import styles from './Drawer.module.scss'
+import AppContext from '../../context'
 
-function Drawer({ onClose, items = [], onRemove, totalPrice }){
-    
+
+function Drawer({ onClose, items = [], onRemove }){
+    const { cartItems } = React.useContext(AppContext);
+    let totalPrice = cartItems.map( (elem) => {return elem.price}).reduce( (sum, current) => (Number(sum) + Number(current)), 0);
     return (
         <div className={styles.overlay}>
             <div className={styles.rightSide}>

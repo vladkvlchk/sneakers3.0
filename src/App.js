@@ -12,26 +12,21 @@ function App(){
     const [items, setItems] = React.useState([]);
     const [cartOpened, setCartOpened] = React.useState(false);
     const [searchValue, setSearchValue] = React.useState('');
-    const [cartItems, setCartItems] = React.useState([]);
+    const [cartItems, setCartItems] = React.useState();
     const [favoriteItems, setFavoriteItems] = React.useState([]);
     const [isLoading, setLoading] = React.useState(true);
-    const [totalPrice, setTotalPrice] = React.useState(0);
 
     React.useEffect(() => {
         const axiosData = async () => {
             setLoading(true);
-            const cartResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/cart')
-            .then( (res) => {
-                setCartItems(res.data);
-                onChangeTotalPrice()});
+            const cartResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/cart');
             const favoriteResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/favorite');
             const itemsResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/items');
             setLoading(false);
     
-            //setCartItems(cartResponse.data);
+            setCartItems(cartResponse.data);
             setFavoriteItems(favoriteResponse.data);
             setItems(itemsResponse.data);
-            //onChangeTotalPrice();
         }
         axiosData().catch(console.error);
     }, [])
@@ -45,7 +40,6 @@ function App(){
                 const { data } = await  axios.post('https://62933f7e089f87a57abcb366.mockapi.io/cart', obj);
                 setCartItems([...cartItems, data]);
             }
-            onChangeTotalPrice();
         } catch {
             alert('Error [on add to cart]')
         }
@@ -71,18 +65,11 @@ function App(){
     const onRemoveFromCart = (id) => {
         setCartItems((prev) => prev.filter(obj => obj.id !== id) );
         axios.delete(`https://62933f7e089f87a57abcb366.mockapi.io/cart/${id}`);
-        onChangeTotalPrice();
     };
 
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value);
     };
-
-    const onChangeTotalPrice = () => {
-        setTotalPrice(cartItems.map(elem => elem.price).reduce( (sum, curr) => {return Number(sum) + Number(curr)}, 0));
-        console.log(cartItems);
-        console.log('price changed');
-    }
 
     return (
         <AppContext.Provider value={{ items, cartItems, favoriteItems }}>
@@ -91,10 +78,8 @@ function App(){
                                 items={cartItems} 
                                 onClose={ () => setCartOpened(false)} 
                                 onRemove={onRemoveFromCart}
-                                totalPrice={totalPrice}
                                 />}
-                <Header onClickCart={ () => setCartOpened(true)}
-                totalPrice={totalPrice}/>
+                <Header onClickCart={ () => setCartOpened(true)}/>
                 <Routes>
                     <Route path='favorites' element={<Favorites
                                                     onAddToFavorite={onAddToFavorite}
