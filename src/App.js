@@ -20,17 +20,20 @@ function App(){
     React.useEffect(() => {
         const axiosData = async () => {
             setLoading(true);
-            const cartResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/cart');
+            const cartResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/cart')
+            .then( (res) => {
+                setCartItems(res.data);
+                onChangeTotalPrice()});
             const favoriteResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/favorite');
             const itemsResponse = await axios.get('https://62933f7e089f87a57abcb366.mockapi.io/items');
             setLoading(false);
     
-            setCartItems(cartResponse.data);
+            //setCartItems(cartResponse.data);
             setFavoriteItems(favoriteResponse.data);
             setItems(itemsResponse.data);
+            //onChangeTotalPrice();
         }
         axiosData().catch(console.error);
-        
     }, [])
 
     const onAddToCart = async (obj) => {
@@ -77,6 +80,8 @@ function App(){
 
     const onChangeTotalPrice = () => {
         setTotalPrice(cartItems.map(elem => elem.price).reduce( (sum, curr) => {return Number(sum) + Number(curr)}, 0));
+        console.log(cartItems);
+        console.log('price changed');
     }
 
     return (
