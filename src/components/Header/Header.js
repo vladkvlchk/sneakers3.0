@@ -5,7 +5,6 @@ import AppContext from '../../context'
 
 function Header(props){
     const { cartItems } = React.useContext(AppContext);
-    console.log(cartItems);
     return (
         <header>
             <Link to="sneakers3.0/">
@@ -34,7 +33,7 @@ function Header(props){
                             <img src="media/unliked.svg" alt="[favorite]"/>
                         </Link>
                     </li>
-                    <li>
+                    <li><Link to="/orders">
                     <svg
                         width="24"
                         height="24"
@@ -54,6 +53,7 @@ function Header(props){
                             d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM3 12C3 14.0902 3.71255 16.014 4.90798 17.5417C6.55245 15.3889 9.14627 14 12.0645 14C14.9448 14 17.5092 15.3531 19.1565 17.4583C20.313 15.9443 21 14.0524 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12ZM12 21C9.84977 21 7.87565 20.2459 6.32767 18.9878C7.59352 17.1812 9.69106 16 12.0645 16C14.4084 16 16.4833 17.1521 17.7538 18.9209C16.1939 20.2191 14.1881 21 12 21Z"
                             fill="currentColor"
                         /></svg>
+                        </Link>
                     </li>
                 </ul>
             </div>

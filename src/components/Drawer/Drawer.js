@@ -3,7 +3,7 @@ import styles from './Drawer.module.scss'
 import AppContext from '../../context'
 
 
-function Drawer({ onClose, items = [], onRemove }){
+function Drawer({ onClose, items = [], onRemove, onOrder }){
     const { cartItems } = React.useContext(AppContext);
     let totalPrice = cartItems.map( (elem) => {return elem.price}).reduce( (sum, current) => (Number(sum) + Number(current)), 0);
     return (
@@ -36,7 +36,7 @@ function Drawer({ onClose, items = [], onRemove }){
                         <p>Tax 5%:</p>
                         <b>{Math.round(totalPrice * 0.05)}$</b>
                     </div>
-                    <button>Checkout</button>
+                    <button onClick={onOrder}>Checkout</button>
                 </div>
             </div>
         </div>
