@@ -2,29 +2,16 @@ import Info from "../components/Info/Info"
 import Order from "../components/Order/Order"
 
 function Orders ({ orders }){
-    orders.forEach( item => {
-        for (let key in item){
-            if (key !== "id"){
-                console.log(key);
-            }
-        }
-    });
     return (
         <div className="content">
-            {orders ? <div>
+            {orders.length ? <div>
                         <h1>Orders</h1>
-                        {/* {orders.forEach( item => {
-                                for (let keyN in item){
-                                    if (keyN !== "id"){
-                                        return <Order key={order.id} order={order}/>
-                                    }
-                                }
-                            })
-                        }) } */}
+                        {orders.map( order => <Order key={order.id} order={order}/>)
+                        }
                         </div> 
-            : <Info imageUrl={''}
-                title={'title'}
-                description={'description'}/>}
+            : <Info imageUrl={'/sneakers3.0/media/empty-cartbox.png'}
+                title={'You have no Orders'}
+                description={'You will see your Orders here when you order them'}/>}
 
         </div>
     )    

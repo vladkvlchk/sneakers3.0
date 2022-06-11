@@ -1,10 +1,10 @@
-
+import style from './OrderItem.module.scss'
 
 function OrderItem({imageUrl, title}){
     return(
-        <div className="orderItem">
+        <div className={style.orderItem}>
             <img src={imageUrl} alt="[sneakers]"/>
-            <div className="orderItemTitle">
+            <div className={style.orderItemTitle}>
                 <p>{title}</p>
             </div>
         </div>

@@ -1,0 +1,31 @@
+.orderItem{
+    // height: 140px;
+    // width: 200px;
+    // border: 1px solid #f3f3f3;
+    // margin: 2px;
+    // border-radius: 15px;
+    border: 1px solid #f3f3f3;
+    padding: 30px;
+    width: 220px;
+    border-radius: 40px;
+    margin: 4px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2px ease-in-out;
+
+    &:hover{
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.06);
+        transform: translateY(-5px);
+    }
+}
+img{
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+}
+.orderItemTitle{
+    display: none;
+}
+.orderItem:hover{
+    .orderItemTitle{
+        display: block;
+    }
+}
