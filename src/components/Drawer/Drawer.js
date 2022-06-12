@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Drawer.module.scss'
 import AppContext from '../../context'
+import Info from '../Info/Info'
 
 
 function Drawer({ onClose, items = [], onRemove, onOrder }){
@@ -15,7 +16,7 @@ function Drawer({ onClose, items = [], onRemove, onOrder }){
                         onClick={onClose}/>
                 </div>
 
-                {items.map((obj) => (
+                {items.length ? items.map((obj) => (
                     <div key={obj.id} className={styles.cartItem}>
                         <img src={obj.imageUrl} alt="[sneakers]"/>
                         <div className={styles.cItemText}>
@@ -25,7 +26,10 @@ function Drawer({ onClose, items = [], onRemove, onOrder }){
                         <img className={styles.delete} src="/sneakers3.0//media/delete.svg" height={20} width={20} alt="[delete]"
                             onClick={() => onRemove(obj.id)}/>
                     </div>
-                ))}
+                ))
+                : <Info imageUrl="/sneakers3.0/media/empty-cartboart.png"
+                title="Cart is empty"
+                description="Add sneakers to you cart to see it here"/>}
        
                 <div className={styles.cartEnd}>
                     <div>
