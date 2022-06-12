@@ -1,5 +1,7 @@
 import Card from '../components/Card/Card.js'
 import CardLoader from '../components/Card/CardLoader.jsx'
+import Slider from '../components/Slider/Slider'
+
 
 function Home({
     items,
@@ -11,7 +13,7 @@ function Home({
 })
 {
     return (<>
-        <div className="slider"></div>
+       <Slider/>
         <div className="content">
             <div className="headerOfContent">
                 <h1>{searchValue ? `Search by request "${searchValue}"` : 'All sneakers'}</h1>
