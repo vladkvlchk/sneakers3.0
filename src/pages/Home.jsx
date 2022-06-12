@@ -13,7 +13,9 @@ function Home({
 })
 {
     return (<>
-       <Slider/>
+        <div className="slider">
+            <Slider/>
+        </div>
         <div className="content">
             <div className="headerOfContent">
                 <h1>{searchValue ? `Search by request "${searchValue}"` : 'All sneakers'}</h1>
