@@ -16,22 +16,22 @@ export default class SimpleSlider extends Component {
       <div>
         <Slider {...settings}>
           <div>
-            <img src="/sneakers3.0/media/forSlider/nikeArt.jpg" alt="[nike art]"/>
+            <img src="/sneakers3.0/media/forSlider/adidasBanner2.jpeg" alt="[banner 1]"/>
           </div>
           <div>
-            <img src="/sneakers3.0/media/forSlider/5shotsBasketball.jpeg" alt="[5 shots basketball]"/>
+            <img src="/sneakers3.0/media/forSlider/nikeBanner3.jpeg" alt="[banner 2]"/>
           </div>
           <div>
-            <img src="/sneakers3.0/media/forSlider/maraphonFoots.jpeg" alt="[maraphon foots]"/>
+            <img src="/sneakers3.0/media/forSlider/adidasBanner3.jpeg" alt="[banner 3]"/>
           </div>
           <div>
-            <img src="/sneakers3.0/media/forSlider/nikeShelf.jpeg" alt="[nike shelf]"/>
+            <img src="/sneakers3.0/media/forSlider/adidasBanner4.jpeg" alt="[banner 4]"/>
           </div>
           <div>
-            <img src="/sneakers3.0/media/forSlider/nikeArt.jpg" alt="[nike art]"/>
+            <img src="/sneakers3.0/media/forSlider/adidasBanner5.jpeg" alt="[banner 5]"/>
           </div>
           <div>
-            <img src="/sneakers3.0/media/forSlider/nikeArt.jpg" alt="[nike art]"/>
+            <img src="/sneakers3.0/media/forSlider/adidasBanner6.jpg" alt="[banner 6]"/>
           </div>
         </Slider>
       </div>
