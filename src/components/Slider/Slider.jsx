@@ -31,7 +31,7 @@ export default class SimpleSlider extends Component {
             <img src="/sneakers3.0/media/forSlider/adidasBanner5.jpeg" alt="[banner 5]"/>
           </div>
           <div>
-            <img src="/sneakers3.0/media/forSlider/adidasBanner6.jpg" alt="[banner 6]"/>
+            <img src="/sneakers3.0/media/forSlider/adidasBanner6.jpeg" alt="[banner 6]"/>
           </div>
         </Slider>
       </div>
